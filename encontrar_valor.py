@@ -18,16 +18,16 @@ def encontrar_valor(dataset):
             timedif = end - start
             file = open('resposta-'+dataset+'.txt','w') 
             file.write('TRUE\n')
-            file.write('p = '+str(i)+'\n')
-            file.write('r = '+str(timedif.total_seconds() * 1000)+'ms') 
+            file.write(str(i)+'\n')
+            file.write(str(timedif.total_seconds() * 1000)) 
             file.close() 
             return dataset+' - TRUE - posição p = '+str(i)
     end = datetime.datetime.now()
     timedif = end - start
     file = open('resposta-'+dataset+'.txt','w') 
     file.write('FALSE\n')
-    file.write('p = -1\n')
-    file.write('r = '+str(timedif.total_seconds() * 1000)+'ms') 
+    file.write('-1\n')
+    file.write(str(timedif.total_seconds() * 1000)) 
     file.close()
     return dataset+' - FALSE - posição p = -1'
 
